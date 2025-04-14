@@ -9,14 +9,21 @@
     <script type="text/jsx">
       const domNode = document.getElementById('app');
 
-      function Header(){
-        return <h1> Develop. Preview. Ship. </h1>;
+      function Header({ title }) {
+        return <h1>{title}</h1>;
       }
 
       function HomePage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
         return (
          <div>
-          <Header />
+          <Header title="Develop. Preview. Ship." />
+          <ul>
+            {names.map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
          </div>
         );
       }
@@ -28,3 +35,11 @@
 
 <!-- Components -->
  <!-- they are like building blocks of legos -->
+
+<!-- Props -->
+ <!-- passing information to components -->
+ <!--
+  Props can be passed to components similarly
+  to HTML attributes, but you can pass any JavaScript
+  value through them, including objects and functions.
+  -->
