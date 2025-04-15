@@ -15,6 +15,10 @@
 
       function HomePage() {
         const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        const [likes, setLikes] = React.useState(0);
+        function handleClick() {
+          setLikes(likes + 1);
+        }
 
         return (
          <div>
@@ -24,6 +28,7 @@
               <li key={name}>{name}</li>
             ))}
           </ul>
+          <button onClick={handleClick}>Like({likes})</button>
          </div>
         );
       }
@@ -42,4 +47,11 @@
   Props can be passed to components similarly
   to HTML attributes, but you can pass any JavaScript
   value through them, including objects and functions.
+  -->
+
+<!-- State -->
+ <!--
+  props are read-only information that's passed to components. State
+  is information that can change over time, usually triggered by user
+  interation
   -->
